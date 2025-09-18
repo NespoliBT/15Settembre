@@ -1,8 +1,8 @@
 local window = {
     title = "15 Settembre",
-    width = 1000,
-    height = 900,
-    resizable = true,
+    width = 1920,
+    height = 1080,
+    resizable = false,
     fullscreen = false,
 }
 

@@ -24,12 +24,14 @@ function windowU.normalize(x, y)
     local windowHeight = love.graphics.getHeight()
     local windowAspectRatio = windowWidth / windowHeight
 
+    local magic_variable = windowAspectRatio * 3.125
+
     local scaleX, scaleY
     if windowAspectRatio > aspectRatio then
-        scaleY = windowHeight / config.window.height
+        scaleY = windowHeight * magic_variable / config.window.height
         scaleX = scaleY
     else
-        scaleX = windowWidth / config.window.width
+        scaleX = windowWidth * magic_variable / config.window.width
         scaleY = scaleX
     end
 

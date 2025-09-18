@@ -1,5 +1,7 @@
 regular = love.graphics.newFont("assets/fonts/PixelifySans.ttf", 24)
 
-fonts = {
+local fonts = {
     regular = regular,
 }
+
+return fonts

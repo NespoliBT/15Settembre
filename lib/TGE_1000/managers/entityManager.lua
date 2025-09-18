@@ -16,6 +16,7 @@ function EntityManager:update(dt)
         entity:update(dt)
     end
 end
+
 -- gotta do dis in layers somehow
 function EntityManager:draw()
     for _, entity in ipairs(entities) do

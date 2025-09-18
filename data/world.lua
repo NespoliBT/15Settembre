@@ -1,5 +1,5 @@
 local world = {
-    gravity = 800
+    gravity = 50
 }
 
 return world

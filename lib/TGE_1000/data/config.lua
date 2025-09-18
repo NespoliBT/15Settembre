@@ -9,8 +9,11 @@ config = {
     },
     debug = {
         simulation = true,
-        collisions = true,
-        entityName = "Player"
+        collisions = false,
+        entityName = "",
+        window = false,
+        spawners = false,
+        info = false
     }
 }
 

@@ -1,5 +1,6 @@
-require "../data/fonts"
-require "../utilities/format"
+local fonts = require "lib/TGE_1000/data/fonts"
+local Object = require "lib/TGE_1000/libraries/classic"
+local format = require "lib/TGE_1000/utilities/format"
 
 local Text = Object:extend()
 
@@ -8,13 +9,13 @@ function Text:new(x, y, str, font, align, limit, color)
     self.startY = y
     self.str = str
     self.font = font or fonts.regular
-    self.align = align or "l"
+    self.align = align or "tl"
     self.limit = limit or love.graphics.getWidth()
     self.color = color or {1, 1, 1}
     self.lines = {}
     self.linesCoordinates = {}
 
-    self.lines = splitText(self.str, self.limit, self.font)
+    self.lines = format.splitText(self.str, self.limit, self.font)
     self.linesInstances = {}
 
     for i, line in ipairs(self.lines) do
@@ -30,7 +31,7 @@ function Text:update(dt)
     self.linesInstances = {}
 
     if(self.str) then
-        self.lines = splitText(self.str, self.limit, self.font)
+        self.lines = format.splitText(self.str, self.limit, self.font)
 
         for i, line in ipairs(self.lines) do
             local x, y = self:applyAlignment(line, self.startX, self.startY + (i - 1) * self.font:getHeight())
